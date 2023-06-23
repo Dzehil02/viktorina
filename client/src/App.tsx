@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Auth } from './pages/Auth'
+import { Auth } from './pages/Auth/Auth'
+import { MyTestList } from './pages/TestList/MyTestList/MyTestList'
 
 function App() {
 
   return (
     <>
-      <h2>Конструктор тестов</h2>
-      <h3>Войдите или зарегистрируйтесь</h3>
-      <Auth/>
+      <Routes>
+        <Route path='/' element={<Auth/>}/>
+        <Route path='/tests' element={<MyTestList/>}/>
+      </Routes>
     </>
   )
 }
