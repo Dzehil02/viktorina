@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    height: 60px;
+    background: #d0bfbf;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    margin-left: auto;
+    padding: 5px;
+}

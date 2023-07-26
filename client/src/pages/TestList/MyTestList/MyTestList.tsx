@@ -20,7 +20,28 @@ export const MyTestList = (props: MyTestListProps) => {
         count: 6
     }
 
-    const tests = [test1, test2]
+    const test3 = {
+        id: 2,
+        title: 'Тест 2',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const test4 = {
+        id: 2,
+        title: 'Тест 2',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const test5 = {
+        id: 2,
+        title: 'Тест 2',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const tests = [test1, test2, test3, test4, test5, test5, test5, test5]
     
     return (
         <div>
@@ -28,7 +49,7 @@ export const MyTestList = (props: MyTestListProps) => {
                 <h1>Мои тесты</h1>
                 <button>Создать тест</button>
             </div>
-            <div>
+            <div className='tableWrapper'>
                 <table>
                     <thead>
                         <tr>

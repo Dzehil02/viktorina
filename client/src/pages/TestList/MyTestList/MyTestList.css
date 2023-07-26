@@ -1,8 +1,12 @@
 .overTable {
     display: flex;
     justify-content: space-between;
-    min-width: 1024px;
+    margin-bottom: 20px;
 }
-  
+ 
+.tableWrapper {
+    max-height: 400px;
+    overflow-y: scroll;
+}
   
   
