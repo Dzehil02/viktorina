@@ -22,6 +22,9 @@ export const Auth = (props: AuthProps) => {
                     <Link to='/tests'>
                         <button>Перейти к тестам</button>
                     </Link>
+                    <Link to='/ptests'>
+                        <button>Перейти к пройденным тестам</button>
+                    </Link>
                 </div>
             </div>
 
