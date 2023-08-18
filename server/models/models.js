@@ -16,8 +16,7 @@ const CompletedTest = sequelize.define('completed_test', {
 
 const Test = sequelize.define('test', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    titile: {type: DataTypes.STRING, allowNull: false},
-    created_at: {type: DataTypes.DATE},
+    title: {type: DataTypes.STRING, allowNull: false},
 })
 
 const Question = sequelize.define('question', {
