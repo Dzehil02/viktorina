@@ -1,6 +1,7 @@
 const {Test, User} = require('../models/models');
 const ApiError = require('../error/ApiError');
 const { model } = require('../db');
+const { where } = require('sequelize');
 
 class TestsController {
     
@@ -33,11 +34,35 @@ class TestsController {
     }
 
     async putTest(req, res) {
+        const {id} = req.params;
+        const {title} = req.body
+        
+        const test = await Test.update(
+            {
+                title
+            },
+            {
+                where: {id}
+            }
+        )
+        
+        return res.json('Test with id: ' + id + ' was updated!');
 
     }
 
     async deleteTestById(req, res) {
+        try {
+            const {id} = req.params;
+    
+            await Test.destroy({
+                where: {id}
+            })
+            
+            return res.json('Test with id: ' + id + ' was deleted!');
 
+        } catch (error) {
+            return res.json(error)
+        }
     }
 
     async getCompletedTests(req, res) {
