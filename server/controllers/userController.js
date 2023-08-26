@@ -1,12 +1,64 @@
-const ApiError = require('../error/ApiError')
+const ApiError = require('../error/ApiError');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { User } = require('../models/models');
+
+const generateJwt = (id, email, role) => {
+    return jwt.sign(
+            {id, email, role}, 
+            process.env.SECRET_KEY, 
+            {expiresIn: '96h'}    
+        )
+}
 
 class UserController {
     
-    async registration(req, res) {
+    async registration(req, res, next) {
+        const {email, password, role} = req.body
 
+        if (!email || !password) {
+            return next(ApiError.badRequest('Пустой email или пароль'))
+        }
+
+        const existingUser = await User.findOne({
+            where: {email}
+        })
+
+        if (existingUser) {
+            return next(ApiError.badRequest('Поьзователь с таким email уже существует'))
+        }
+
+        const hashPassword = await bcrypt.hash(password, 5);
+        const user = await User.create({email, role, password: hashPassword})
+        const token = generateJwt(user.id, user.email, user.role)
+
+        return res.json({token})
     }
 
-    async login(req, res) {
+    async login(req, res, next) {
+        const {email, password} = req.body
+
+        if (!email || !password) {
+            return next(ApiError.badRequest('Пустой email или пароль'))
+        }
+        
+        const user = await User.findOne({
+            where: {email}
+        })
+
+        if (!user) {
+            return next(ApiError.internal(`Пользователь с email: ${email} не найден`))
+        }
+
+        let comparePassword = bcrypt.compareSync(password, user.password)
+
+        if (!comparePassword) {
+            return next(ApiError.internal(`Не верный пароль`))
+        }
+
+        const token = generateJwt(user.id, user.email, user.role)
+
+        return res.json({token})
 
     }
 
