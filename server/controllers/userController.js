@@ -62,12 +62,14 @@ class UserController {
 
     }
 
-    async auth(req, res, next) {
-        const {id} = req.query
-        if (!id) {
-            return next(ApiError.badRequest('Нет id пользователя'))
-        }
-        res.json(id)
+    async auth(req, res) {
+        const token = generateJwt(req.user.id, req.user.email, req.user.role)
+        return res.json({token})
+    }
+
+    async getUsers(req, res) {
+        const users = await User.findAll();
+        return res.json(users)
     }
 
     async password(req, res) {
