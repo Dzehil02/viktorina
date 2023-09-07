@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import './Header.css'
-import { Avatar } from '../Avatar/Avatar';
-import avatar from '../../assets/Avatar.png'
+import avatar from '../../../assets/Avatar.png'
+import { Avatar } from '../../Avatar';
+
 
 interface HeaderProps {
     className?: string;
