@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Auth.css'
+import { Input } from '../../../shared/ui/Input';
 
 interface AuthProps {
     className?: string;
@@ -11,7 +12,7 @@ export const Auth = (props: AuthProps) => {
 
             <div className={'Auth'}>
                 <div className={'form'}>
-                    <input className={'input'} type='text' placeholder='Введите логин' />
+                    <Input className={'input'} type='text' placeholder='Введите логин' />
                     <input className={'input'} type='text' placeholder='Введите пароль' />
                 </div>
                 <div className={'btnWrapper'}>

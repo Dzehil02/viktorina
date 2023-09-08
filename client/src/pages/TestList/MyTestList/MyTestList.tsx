@@ -21,27 +21,48 @@ export const MyTestList = (props: MyTestListProps) => {
     }
 
     const test3 = {
-        id: 2,
-        title: 'Тест 2',
+        id: 3,
+        title: 'Тест 3',
         created_at: '24.06.2023',
         count: 6
     }
 
     const test4 = {
-        id: 2,
-        title: 'Тест 2',
+        id: 4,
+        title: 'Тест 4',
         created_at: '24.06.2023',
         count: 6
     }
 
     const test5 = {
-        id: 2,
-        title: 'Тест 2',
+        id: 5,
+        title: 'Тест 5',
         created_at: '24.06.2023',
         count: 6
     }
 
-    const tests = [test1, test2, test3, test4, test5, test5, test5, test5]
+    const test6 = {
+        id: 6,
+        title: 'Тест 6',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const test7 = {
+        id: 7,
+        title: 'Тест 7',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const test8 = {
+        id: 8,
+        title: 'Тест 8',
+        created_at: '24.06.2023',
+        count: 6
+    }
+
+    const tests = [test1, test2, test3, test4, test5, test6, test7, test8]
     
     return (
         <div>
@@ -61,7 +82,7 @@ export const MyTestList = (props: MyTestListProps) => {
                     </thead>
                     <tbody>
                         {tests.map(test => (
-                        <tr>
+                        <tr key={test.id}>
                             <td>{test.title}</td>
                             <td>{test.created_at}</td>
                             <td>{test.count}</td>

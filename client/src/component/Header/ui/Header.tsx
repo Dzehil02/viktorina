@@ -1,5 +1,5 @@
 import './Header.css'
-import avatar from '../../../assets/Avatar.png'
+import avatar from '../../../shared/assets/Avatar.png'
 import { Avatar } from '../../Avatar';
 
 

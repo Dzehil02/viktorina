@@ -54,7 +54,7 @@ export const PassedTestList = (props: PassedTestListProps) => {
                     </thead>
                     <tbody>
                         {tests.map(test => (
-                        <tr>
+                        <tr key={test.id}>
                             <td>{test.title}</td>
                             <td>{test.created_at}</td>
                             <td>{test.result}</td>
