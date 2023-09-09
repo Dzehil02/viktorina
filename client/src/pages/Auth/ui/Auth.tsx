@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
-import './Auth.css'
 import { Input } from '../../../shared/ui/Input';
+import cls from './Auth.module.scss';
+import { classNames } from '../../../shared/lib/classNames/classNames';
 
 interface AuthProps {
     className?: string;
 }
 
 export const Auth = (props: AuthProps) => {
+
+    const {className} = props;
     
     return (
 
-            <div className={'Auth'}>
-                <div className={'form'}>
-                    <Input className={'input'} type='text' placeholder='Введите логин' />
-                    <input className={'input'} type='text' placeholder='Введите пароль' />
+            <div className={classNames(cls.Auth, {}, [className])}>
+                <div className={classNames(cls.form, {}, [className])}>
+                    <Input type='text' placeholder='Введите логин' />
+                    <Input type='text' placeholder='Введите пароль' />
                 </div>
                 <div className={'btnWrapper'}>
                     <button>Войти</button>
