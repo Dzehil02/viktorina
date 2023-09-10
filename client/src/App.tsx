@@ -1,6 +1,6 @@
-import './App.css'
+import './App.scss'
 import { AppRouter } from './app/router'
-import { Header } from './component/Header'
+import { Header } from './widgets/Header'
 
 function App() {
 

@@ -1,5 +1,4 @@
 import { CSSProperties, useMemo } from 'react';
-import './Avatar.css'
 
 interface AvatarProps {
     className?: string;
