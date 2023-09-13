@@ -28,6 +28,6 @@ export const routeConfig: RouteObj[] = [
     },
     {
         path: '*',
-        element: <NotFoundPage />,
+        element: <NotFoundPage />
     },
 ];

@@ -1,4 +1,4 @@
-import './NotFoundPage.css'
+import './NotFoundPage.module.scss'
 
 interface NotFoundPageProps {
     className?: string;
