@@ -3,18 +3,18 @@ import { Route, Routes } from "react-router-dom";
 import { routeConfig } from "../config/routeConfig";
 import { NotAvailable } from "../../../pages/NotAvailable";
 import { Context } from "../../../main";
-import UserStore from "../../store/UserStore";
+import { observer } from "mobx-react-lite";
 
 const routes = routeConfig;
-export const AppRouter = () => {
-  const {user} = useContext(Context) as UserStore
+export const AppRouter = observer(() => {
+  const {user} = useContext(Context)
 
-  console.log(user)
+  console.log(user.isAuth)
 
   return (
     <Routes>
       {routes.map((route) => {
-        if (route.authOnly && user.isAuth) {
+        if (route.authOnly && !user.isAuth) {
           return (
             <Route
               key={route.path}
@@ -29,4 +29,4 @@ export const AppRouter = () => {
       })}
     </Routes>
   );
-};
+});

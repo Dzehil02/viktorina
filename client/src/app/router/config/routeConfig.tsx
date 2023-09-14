@@ -5,6 +5,7 @@ import { PassedTestList } from "../../../pages/TestList/PassedTestList/PassedTes
 import { NotFoundPage } from "../../../pages/NotFoundPage";
 import { UserRole } from "../../../entities/User/model/consts/consts";
 import { Auth } from "../../../pages/Auth";
+import { Main } from "../../../pages/Main";
 
 export interface RouteObj extends RouteObject {
     authOnly?: boolean;
@@ -14,6 +15,14 @@ export interface RouteObj extends RouteObject {
 export const routeConfig: RouteObj[] = [
     {
         path: AppRoutes.MAIN,
+        element: <Main />,
+    },
+    {
+        path: AppRoutes.REGISTRATION,
+        element: <Auth />,
+    },
+    {
+        path: AppRoutes.LOGIN,
         element: <Auth />,
     },
     {
