@@ -2,6 +2,8 @@ import { observer } from 'mobx-react-lite';
 import './MyTestList.css'
 import { Context } from '../../../main';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../../../shared/ui/Button';
 
 interface MyTestListProps {
     className?: string;
@@ -9,12 +11,17 @@ interface MyTestListProps {
 
 export const MyTestList = observer((props: MyTestListProps) => {
     const {test} = useContext(Context);
+    const navigate = useNavigate()
+
+    const navigateToCreateTest = () => {
+      navigate('/createtest')
+    }
     
     return (
         <div>
             <div className='overTable'>
                 <h1>Мои тесты</h1>
-                <button>Создать тест</button>
+                <Button onClick={navigateToCreateTest}>Создать тест</Button>
             </div>
             <div className='tableWrapper'>
                 <table>

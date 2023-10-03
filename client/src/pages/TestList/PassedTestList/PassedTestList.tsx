@@ -21,7 +21,7 @@ export const PassedTestList = observer((props: PassedTestListProps) => {
                     <thead>
                         <tr>
                             <th>Название теста</th>
-                            <th>Дата создания</th>
+                            <th>Дата прохождения</th>
                             <th>Результат</th>
                             <th>Действия</th>
                         </tr>

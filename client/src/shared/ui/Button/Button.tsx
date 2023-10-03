@@ -1,4 +1,4 @@
-import { ReactNode, memo } from 'react';
+import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 import { Mods, classNames } from '../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -6,7 +6,7 @@ export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 's' | 'm' | 'l';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     variant?: ButtonVariant;
     size?: ButtonSize;

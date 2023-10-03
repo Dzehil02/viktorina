@@ -23,21 +23,11 @@ export const AuthByUsername = (props: AuthByUsernameProps) => {
                 <div className={classNames(cls.form, {}, [className])}>
                     <Input type='text' placeholder='Введите логин' />
                     <Input type='text' placeholder='Введите пароль' />
+                    {!isLogin && <Input type='text' placeholder='Повторите пароль' />}
                 </div>
                 <div className={classNames(cls.btnWrapper, {}, [className])}>
                     {isLogin ? <NavLink to={AppRoutes.REGISTRATION}>Зарегистрироваться</NavLink> : <NavLink to={AppRoutes.LOGIN}>Войти</NavLink>}
                     <Button className={cls.btn} size='m'>{isLogin ? 'Войти' : 'Зарегистрироваться'}</Button>  
-                </div>
-                <div>
-                    <Link to='/'>
-                        <button>Перейти на главную страницу</button>
-                    </Link>
-                    <Link to='/tests'>
-                        <button>Перейти к тестам</button>
-                    </Link>
-                    <Link to='/ptests'>
-                        <button>Перейти к пройденным тестам</button>
-                    </Link>
                 </div>
             </form>
 
