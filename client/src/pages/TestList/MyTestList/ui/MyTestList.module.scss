@@ -1,6 +1,15 @@
+.MyTestList {
+    flex: 1 1 auto
+}
+
+.title {
+    color: #000;
+}
+
 .overTable {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
 }
  

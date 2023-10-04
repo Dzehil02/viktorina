@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Input } from '../../../shared/ui/Input';
 import cls from './AuthByUsername.module.scss';
 import { classNames } from '../../../shared/lib/classNames/classNames';
@@ -17,7 +17,6 @@ export const AuthByUsername = (props: AuthByUsernameProps) => {
 
     
     return (
-
             <form className={classNames(cls.AuthByUsername, {}, [className])}>
                 {isLogin ? <h2>Авторизация</h2> : <h2>Регистрация</h2>}
                 <div className={classNames(cls.form, {}, [className])}>
@@ -30,7 +29,5 @@ export const AuthByUsername = (props: AuthByUsernameProps) => {
                     <Button className={cls.btn} size='m'>{isLogin ? 'Войти' : 'Зарегистрироваться'}</Button>  
                 </div>
             </form>
-
-
     )
 }

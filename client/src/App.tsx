@@ -1,14 +1,16 @@
 import './App.scss'
 import { AppRouter } from './app/router'
+import { Footer } from './widgets/Footer'
 import { Header } from './widgets/Header'
 
 function App() {
 
   return (
-    <>
-      <Header/>
+    <div className='app'>
+      <Header />
       <AppRouter/>
-    </>
+      <Footer/>
+    </div>
   )
 }
 
