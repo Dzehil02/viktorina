@@ -93,7 +93,7 @@ const ptest4 = {
 }
 
 
-const ptests = [ptest1, ptest2, ptest3, ptest4]
+const ptests = [ptest1, ptest2, ptest3, ptest4, ptest1, ptest2, ptest3, ptest4, ptest1, ptest2]
 
 
 export default class TestStore implements TestStoreTypes {

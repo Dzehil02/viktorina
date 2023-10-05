@@ -1,7 +1,9 @@
 import { observer } from "mobx-react-lite";
-import "./PassedTestList.css";
+import cls from "../../TestList.module.scss";
+import { classNames } from "../../../../shared/lib/classNames/classNames";
 import { Context } from "../../../../main";
 import { useContext } from "react";
+import { Button } from "../../../../shared/ui/Button";
 
 interface PassedTestListProps {
   className?: string;
@@ -11,11 +13,11 @@ export const PassedTestList = observer((props: PassedTestListProps) => {
   const { test } = useContext(Context);
 
   return (
-    <div style={{ flex: "1 1 auto" }}>
-      <div className="overTable">
-        <h1>Пройденные тесты</h1>
+    <div className={classNames(cls.TestList, {}, [])}>
+      <div className={classNames(cls.overTable, {}, [])}>
+        <h1 className={classNames(cls.title, {}, [])}>Пройденные тесты</h1>
       </div>
-      <div className="tableWrapper">
+      <div className={classNames(cls.tableWrapper, {}, [])}>
         <table>
           <thead>
             <tr>
@@ -32,7 +34,7 @@ export const PassedTestList = observer((props: PassedTestListProps) => {
                 <td>{test.created_at}</td>
                 <td>{test.result}</td>
                 <td>
-                  <button>Открыть</button>
+                  <Button variant='outline' size="s">Открыть</Button>
                 </td>
               </tr>
             ))}

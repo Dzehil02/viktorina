@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import cls from "./MyTestList.module.scss";
+import cls from "../../TestList.module.scss";
 import { classNames } from "../../../../shared/lib/classNames/classNames";
 import { Context } from "../../../../main";
 import { useContext } from "react";
@@ -21,7 +21,7 @@ export const MyTestList = observer((props: MyTestListProps) => {
   };
 
   return (
-    <div className={classNames(cls.MyTestList, {}, [])}>
+    <div className={classNames(cls.TestList, {}, [])}>
       <div className={classNames(cls.overTable, {}, [])}>
         <h1 className={classNames(cls.title, {}, [])}>Мои тесты</h1>
         <Button onClick={navigateToCreateTest}>Создать тест</Button>
