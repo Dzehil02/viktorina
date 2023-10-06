@@ -2,10 +2,6 @@
     flex: 1 1 auto
 }
 
-.title {
-    color: #000;
-}
-
 .overTable {
     display: flex;
     justify-content: space-between;
@@ -14,7 +10,7 @@
 }
  
 .tableWrapper {
-    max-height: 400px;
+    max-height: 550px;
     overflow-y: scroll;
 }
   

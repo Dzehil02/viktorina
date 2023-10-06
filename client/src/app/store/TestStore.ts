@@ -62,7 +62,7 @@ const test8 = {
     count: 6
 }
 
-const tests = [test1, test2, test3, test4, test5, test6, test7, test8]
+const tests = [test1, test2, test3, test4, test5, test6, test7, test8, test1, test2, test3, test4,]
 
 const ptest1 = {
     id: 1,
