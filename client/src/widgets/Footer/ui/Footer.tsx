@@ -9,7 +9,9 @@ export const Footer = ({ className }: FooterProps) => {
 
   return (
     <div className={classNames(cls.footer, {}, [className])}>
-        <h2>FOOTER</h2>
+        <p>ссылка на гитхаб проекта</p>
+        <p>2023</p>
+        <p>изменить тему или язык</p>
     </div>
   );
 };

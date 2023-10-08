@@ -55,3 +55,15 @@
 .disabled {
     opacity: 0.5;
 }
+
+.cancel {
+    &:hover {
+        border: 2px solid #cf1f00;
+    }
+}
+
+.accept {
+    &:hover {
+        border: 2px solid #1a9e00;
+    }
+}

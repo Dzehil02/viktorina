@@ -8,6 +8,7 @@ import { Button } from '../../../shared/ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { Link } from 'react-router-dom';
+import { Dropdown } from '../../../shared/ui/DropDown';
 
 interface HeaderProps {
     className?: string;
@@ -38,11 +39,16 @@ export const Header = observer(({ className }: HeaderProps) => {
           <Link to="/ptests">
             <button>Перейти к пройденным тестам</button>
           </Link>
-          <Avatar
-            src={avatar}
-            size={50}
-            alt="avatar"
-            className={classNames(cls.avatar, {}, [className])}
+
+          <Dropdown
+            trigger={
+              <Avatar
+                src={avatar}
+                size={50}
+                alt="avatar"
+                className={classNames(cls.avatar, {}, [className])}
+              />
+            }
           />
         </div>
       ) : (

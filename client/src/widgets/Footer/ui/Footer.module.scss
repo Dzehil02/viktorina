@@ -1,8 +1,9 @@
 .footer {
     display: flex;
-    justify-content: center;
-    height: 60px;
+    justify-content: space-around;
+    height: 40px;
     background: var(--bg-color-card);
     border-radius: 5px;
     align-items: center;
+    color: #000;
 }
