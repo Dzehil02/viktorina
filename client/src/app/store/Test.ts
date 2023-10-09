@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-export interface TestStoreTypes {
+export interface TestTypes {
     tests: any[];
     setTests: (tests: any[]) => void;
     get tests(): any[];
@@ -96,7 +96,7 @@ const ptest4 = {
 const ptests = [ptest1, ptest2, ptest3, ptest4, ptest1, ptest2, ptest3, ptest4, ptest1, ptest2]
 
 
-export default class TestStore implements TestStoreTypes {
+export default class Test implements TestTypes {
     constructor() {
         this._tests = tests;
         this._ptests = ptests;

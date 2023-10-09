@@ -1,35 +1,50 @@
-import { memo } from 'react';
+import avatar from "../../../shared/assets/Avatar.png";
+import { memo } from "react";
+import { AppRoutes } from "../../../app/router/consts/consts";
+import { Avatar } from "../../../shared/ui/Avatar";
+import { classNames } from "../../../shared/lib/classNames/classNames";
+import cls from "./AvatarDropdown.module.scss";
+import { Dropdown } from "../../../shared/ui/DropDown";
 
 interface AvatarDropdownProps {
-    className?: string;
+  className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-    const { className } = props;
-// В items перенести ссылки на "Мои тесты", "Пройденные тесты", "Профиль", "Выйти", "Главная страница". Главная страница потопму удалить
-    const items = [
-        {
-            content: t('settings'),
-            href: getRouteSettings(),
-        },
-        {
-            content: t('profile'),
-            href: getRouteProfile(authData.id),
-        },
-        {
-            content: t('Exit'),
-            onClick: onLogout,
-        },
-    ]
+  const { className } = props;
 
-    return (
-        <Dropdown
-                    className={classNames(cls.AvatarDropdown, {}, [className])}
-                    direction={'bottom left'}
-                    items={items}
-                    trigger={
-                        <Avatar size={40} src={authData.avatar} />
-                    }
+  const items = [
+    {
+      content: "Мои тесты",
+      href: AppRoutes.TESTS,
+    },
+    {
+      content: "Пройденные тесты",
+      href: AppRoutes.PASSED_TESTS,
+    },
+    {
+      content: "Профиль",
+      href: AppRoutes.MAIN,
+    },
+    {
+      content: "Выйти",
+      // onClick: onLogout,
+      href: AppRoutes.LOGIN,
+    },
+  ];
+
+  return (
+    <Dropdown
+      className={classNames(cls.AvatarDropdown, {}, [className])}
+      items={items}
+      trigger={
+        <Avatar
+          src={avatar}
+          size={50}
+          alt="avatar"
+          className={classNames(cls.avatar, {}, [className])}
         />
-    );
+      }
+    />
+  );
 });

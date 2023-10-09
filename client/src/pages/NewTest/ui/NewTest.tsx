@@ -8,6 +8,7 @@ import { Title } from '../../../shared/ui/Title';
 import { TestList } from '../../../features/TestList';
 import { Card } from '../../../shared/ui/Card';
 import Add from '../../../shared/assets/icons/add.svg?react';
+import { AddQuestion } from '../../../features/CreateQuestions';
 
 interface NewTestProps {
     className?: string;
@@ -285,6 +286,7 @@ export const NewTest = observer((props: NewTestProps) => {
             <Button variant='outline' action='cancel'>Отменить</Button>
             <Button variant='outline' action='accept'>Сохранить</Button>
         </div>
+        <AddQuestion/>
       </div>
     );
 })
