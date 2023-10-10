@@ -12,7 +12,7 @@
 }
 
 .active {
-    color: #646cff;
+    color: var(--bd-color);
 }
 
 .disabled {
@@ -20,7 +20,7 @@
 }
 
 .menu {
-    background: #242424;
+    background: var(--bg-color);
     position: absolute;
     z-index: 1000;
     display: flex;

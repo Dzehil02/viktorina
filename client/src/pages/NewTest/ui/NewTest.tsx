@@ -9,9 +9,87 @@ import { TestList } from '../../../features/TestList';
 import { Card } from '../../../shared/ui/Card';
 import Add from '../../../shared/assets/icons/add.svg?react';
 import { AddQuestion } from '../../../features/CreateQuestions';
+import { AddAnswer } from '../../../features/CreateAnswers';
 
 interface NewTestProps {
     className?: string;
+}
+
+type AnswerVariant = 'radio' | 'checkbox' | 'text';
+
+interface Answer {
+  value: string;
+  correct: boolean
+}
+
+interface AnswerBody {
+  answers: Answer[],
+  type: AnswerVariant;
+}
+
+const answersJS: Answer[] = [
+  {
+    value: "1987",
+    correct: false
+  },
+  {
+    value: "1998",
+    correct: true
+  },
+  {
+    value: "2003",
+    correct: false
+  },
+  {
+    value: "2005",
+    correct: false
+  },
+]
+
+const answersPython: Answer[] = [
+  {
+    value: "В простоте",
+    correct: true
+  },
+  {
+    value: "В силе",
+    correct: true
+  },
+  {
+    value: "В питонистах",
+    correct: false
+  },
+  {
+    value: "Я морж",
+    correct: false
+  },
+]
+
+const answersJava: Answer[] = [
+  {
+    value: "ООП",
+    correct: true
+  }
+]
+
+const answer1: AnswerBody = {
+  answers: answersJS,
+  type: 'radio'
+}
+
+const answer2: AnswerBody = {
+  answers: answersPython,
+  type: 'checkbox'
+}
+
+const answer3: AnswerBody = {
+  answers: answersJava,
+  type: 'text'
+}
+
+interface AddAnswerProps {
+  className?: string;
+  answers: AnswerBody;
 }
 
 export const NewTest = observer((props: NewTestProps) => {
@@ -287,6 +365,7 @@ export const NewTest = observer((props: NewTestProps) => {
             <Button variant='outline' action='accept'>Сохранить</Button>
         </div>
         <AddQuestion/>
+        <AddAnswer answers={answer1}/>
       </div>
     );
 })

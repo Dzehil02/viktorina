@@ -1,0 +1,33 @@
+.Listbox {
+    position: relative;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+        border-color: var(--bd-color);
+    }
+}
+
+.menu {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    border-radius: 8px;
+    margin-top: 5px;
+    top: 100%;
+    right: 0;
+}
+
+.option {
+    padding: 5px 10px 5px 0;
+    cursor: pointer;
+}
+
+.active {
+    color: var(--bd-color);
+}

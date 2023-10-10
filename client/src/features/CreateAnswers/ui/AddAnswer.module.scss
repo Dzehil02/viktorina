@@ -1,0 +1,31 @@
+.answerBody {
+    color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.answer {
+
+}
+
+.label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btnWrap {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.btnDelete {
+    margin-top: 10px;
+}

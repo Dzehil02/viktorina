@@ -4,7 +4,7 @@ import { makeAutoObservable } from "mobx";
     
 // }
 
-type QuestionVariant = 'radio' | 'box' | 'input';
+export type QuestionVariant = 'radio' | 'box' | 'input';
 
 interface QuestionDescription {
     description: string;
@@ -19,7 +19,7 @@ const question1: QuestionDescription = {
 }
 
 const question2: QuestionDescription = {
-    description: 'Вопрос о путхоне',
+    description: 'Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне',
     type: 'box',
     order: 2
 }

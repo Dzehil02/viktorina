@@ -4,7 +4,7 @@ import { AppRoutes } from "../../../app/router/consts/consts";
 import { Avatar } from "../../../shared/ui/Avatar";
 import { classNames } from "../../../shared/lib/classNames/classNames";
 import cls from "./AvatarDropdown.module.scss";
-import { Dropdown } from "../../../shared/ui/DropDown";
+import { Dropdown } from "../../../shared/ui/Dropdown";
 
 interface AvatarDropdownProps {
   className?: string;
