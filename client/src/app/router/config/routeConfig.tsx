@@ -7,6 +7,8 @@ import { UserRole } from "../../../entities/User/model/consts/consts";
 import { Auth } from "../../../pages/Auth";
 import { Main } from "../../../pages/Main";
 import { NewTest } from "../../../pages/NewTest";
+import { EditTest } from "../../../pages/EditTest";
+import { PassTest } from "../../../pages/PassTest";
 
 export interface RouteObj extends RouteObject {
   authOnly?: boolean;
@@ -36,16 +38,16 @@ export const routeConfig: RouteObj[] = [
     element: <PassedTestList />,
     authOnly: true,
   },
-  // {
-  //     path: AppRoutes.PASS_TEST_BY_ID + '/:id',
-  //     element: < />,
-  //     authOnly: true,
-  // },
-  // {
-  //     path: AppRoutes.EDIT_TEST_BY_ID + '/:id',
-  //     element: < />,
-  //     authOnly: true,
-  // },
+  {
+      path: AppRoutes.PASS_TEST_BY_ID + '/:id',
+      element: <PassTest />,
+      authOnly: true,
+  },
+  {
+      path: AppRoutes.EDIT_TEST_BY_ID + '/:id',
+      element: <EditTest />,
+      authOnly: true,
+  },
   // {
   //     path: AppRoutes.SHOW_TEST_BY_ID + '/:id',
   //     element: < />,

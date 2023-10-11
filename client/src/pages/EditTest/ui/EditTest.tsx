@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { observer } from "mobx-react-lite";
-import cls from "./NewTest.module.scss";
+import cls from "./EditTest.module.scss";
 import { classNames } from "../../../shared/lib/classNames/classNames";
 import { Context } from "../../../main";
 import { Button } from "../../../shared/ui/Button";
@@ -12,7 +12,7 @@ import Remove from "../../../shared/assets/icons/remove.svg?react";
 import { AddQuestion } from "../../../features/CreateQuestions";
 import { AddAnswer } from "../../../features/CreateAnswers";
 
-interface NewTestProps {
+interface EditTestProps {
   className?: string;
 }
 
@@ -93,12 +93,12 @@ interface AddAnswerProps {
   answers: AnswerBody;
 }
 
-export const NewTest = observer((props: NewTestProps) => {
+export const EditTest = observer((props: EditTestProps) => {
   const { test } = useContext(Context);
 
   return (
     <div className={classNames(cls.NewTest, {}, [])}>
-      <Title align="center" title={"Создание нового теста"} />
+      <Title align="center" title={"Редактирование теста"} />
       <div className={classNames(cls.questionWrapper, {}, [])}>
         <Card>
           <AddQuestion />

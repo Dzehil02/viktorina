@@ -10,25 +10,30 @@ import { Input } from "../../../shared/ui/Input";
 import { Dropdown } from "../../../shared/ui/Dropdown";
 import { ListBox } from "../../../shared/ui/ListBox";
 
+export type QuestionVariant = "radio" | "checkbox" | "text";
+
+interface QuestionDescription {
+    description: string;
+    type: QuestionVariant;
+    order: number;
+}
+
 interface AddQuestionProps {
   className?: string;
+  questionInfo?: QuestionDescription;
 }
 export const AddQuestion = observer((props: AddQuestionProps) => {
-  const { className, } = props;
+  const { className, questionInfo} = props;
   const { question } = useContext(Context);
 
   return (
-    <>
-      {question.questions.map((item, index) => (
-        <div className={classNames(cls.question, {}, [])}>
-          <Title subTitle={item.order} />
-          <Input
-            className={classNames(cls.inputQuestion, {}, [])}
-            value={item.description}
-          />
-          <ListBox />
-        </div>
-      ))}
-    </>
+    <div className={classNames(cls.question, {}, [])}>
+      <Title subTitle={'1'} />
+      <Input
+        className={classNames(cls.inputQuestion, {}, [])}
+        value={'Вопрос о жабесрип'}
+      />
+      <ListBox />
+  </div>
   );
 });

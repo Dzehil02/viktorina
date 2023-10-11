@@ -11,13 +11,17 @@
     text-align: left;
 }
 
-.answer {
-
+.enterAnswer {
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
-.label {
-    margin-left: 10px;
-    cursor: pointer;
+.labelForText {
+    margin-right: 10px;
+}
+
+.hid {
+    visibility: hidden;
 }
 
 .btnWrap {

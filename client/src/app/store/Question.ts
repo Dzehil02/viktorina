@@ -29,6 +29,7 @@ const questions = [question1, question2]
 export default class Question {
     constructor() {
         this._questions = questions;
+        this._question = question2;
         makeAutoObservable(this);
     }
 
@@ -38,6 +39,14 @@ export default class Question {
 
     get questions() {
         return this._questions;
+    }
+
+    setQuestion(question) {
+        this._question = question;
+    }
+
+    get question() {
+        return this._question;
     }
 
 
