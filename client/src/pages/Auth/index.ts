@@ -1,1 +1,1 @@
-export {Auth} from './ui/Auth';
+export {AuthAsync as Auth} from './ui/AuthAsync';

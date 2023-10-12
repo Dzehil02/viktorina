@@ -11,6 +11,11 @@ import Add from "../../../shared/assets/icons/add.svg?react";
 import Remove from "../../../shared/assets/icons/remove.svg?react";
 import { AddQuestion } from "../../../features/CreateQuestions";
 import { AddAnswer } from "../../../features/CreateAnswers";
+import { AddQuestionAnswerCard } from "../../../features/AddQuestionAnswerCard";
+import { SaveTest } from "../../../features/SaveTest";
+import { EditAnswers } from "../../../features/EditAnswers";
+import { QuestionDescription } from "../../../features/CreateQuestions/ui/AddQuestion";
+import { EditQuestion } from "@/features/EditQuestion";
 
 interface EditTestProps {
   className?: string;
@@ -93,6 +98,12 @@ interface AddAnswerProps {
   answers: AnswerBody;
 }
 
+const emptyQuestionForm: QuestionDescription = {
+  description: 'Вопрос про пайтон жабаскрип',
+  type: 'radio',
+  order: 1
+}
+
 export const EditTest = observer((props: EditTestProps) => {
   const { test } = useContext(Context);
 
@@ -101,32 +112,20 @@ export const EditTest = observer((props: EditTestProps) => {
       <Title align="center" title={"Редактирование теста"} />
       <div className={classNames(cls.questionWrapper, {}, [])}>
         <Card>
-          <AddQuestion />
-          <AddAnswer answers={answer1} />
+          <EditQuestion questionInfo={emptyQuestionForm} />
+          <EditAnswers answers={answer1} />
         </Card>
         <Card>
-          <AddQuestion />
-          <AddAnswer answers={answer2} />
+          <EditQuestion questionInfo={emptyQuestionForm} />
+          <EditAnswers answers={answer2} />
         </Card>
         <Card>
-          <AddQuestion />
-          <AddAnswer answers={answer3} />
+          <EditQuestion questionInfo={emptyQuestionForm} />
+          <EditAnswers answers={answer3} />
         </Card>
-        <Button size="s" variant="clear">
-          <Add />
-        </Button>
-        <Button size="s" variant="clear">
-          <Remove />
-        </Button>
+      <AddQuestionAnswerCard/>
       </div>
-      <div>
-        <Button variant="outline" action="cancel">
-          Отменить
-        </Button>
-        <Button variant="outline" action="accept">
-          Сохранить
-        </Button>
-      </div>
+      <SaveTest/>
     </div>
   );
 });

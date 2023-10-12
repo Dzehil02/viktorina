@@ -1,12 +1,18 @@
+import { Suspense } from 'react';
 import { AuthByUsername } from '../../../features/AuthByUsername';
 
 interface AuthProps {
     className?: string;
 }
 
-export const Auth = (props: AuthProps) => {
+const Auth = (props: AuthProps) => {
 
     const {className} = props;
     
-    return (<AuthByUsername className={className}/>)
+    return (
+        <Suspense fallback={<div>Loading ...</div>}>
+            <AuthByUsername className={className}/>
+        </Suspense>)
 }
+
+export default Auth;

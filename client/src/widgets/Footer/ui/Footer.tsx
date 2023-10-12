@@ -8,10 +8,10 @@ interface FooterProps {
 export const Footer = ({ className }: FooterProps) => {
 
   return (
-    <div className={classNames(cls.footer, {}, [className])}>
+    <footer className={classNames(cls.footer, {}, [className])}>
         <p>ссылка на гитхаб проекта</p>
         <p>2023</p>
         <p>изменить тему или язык</p>
-    </div>
+    </footer>
   );
 };

@@ -1,7 +1,7 @@
 import { useContext, useCallback } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../../main";
-import cls from "./AddQuestion.module.scss";
+import cls from "./EditQuestion.module.scss";
 import { Card } from "../../../shared/ui/Card";
 import { Title } from "../../../shared/ui/Title";
 import { Button } from "../../../shared/ui/Button";
@@ -18,11 +18,11 @@ export interface QuestionDescription {
     order: number;
 }
 
-interface AddQuestionProps {
+interface EditQuestionProps {
   className?: string;
   questionInfo?: QuestionDescription;
 }
-export const AddQuestion = observer((props: AddQuestionProps) => {
+export const EditQuestion = observer((props: EditQuestionProps) => {
   const { className, questionInfo} = props;
   const { question } = useContext(Context);
 
@@ -31,7 +31,7 @@ export const AddQuestion = observer((props: AddQuestionProps) => {
       <Title subTitle={String(questionInfo?.order)} />
       <Input
         className={classNames(cls.inputQuestion, {}, [])}
-        value={''}
+        value={questionInfo?.description}
       />
       <ListBox />
   </div>

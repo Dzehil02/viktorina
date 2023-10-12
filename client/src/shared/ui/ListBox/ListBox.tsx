@@ -2,6 +2,7 @@ import { useState, Fragment } from 'react';
 import { Listbox } from '@headlessui/react';
 import { classNames } from '../../lib/classNames/classNames';
 import cls from './ListBox.module.scss';
+import { QuestionVariant } from '../../../app/store/Question';
 
 const variants: ListboxItem[] = [
     {

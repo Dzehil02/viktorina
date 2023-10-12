@@ -1,7 +1,7 @@
 import { useContext, useCallback } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../../main";
-import cls from "./AddAnswer.module.scss";
+import cls from "./EditAnswers.module.scss";
 import { classNames } from "../../../shared/lib/classNames/classNames";
 import { Button } from "../../../shared/ui/Button";
 import { QuestionVariant } from "../../../app/store/Question";
@@ -18,12 +18,12 @@ export interface AnswerBody {
   type: AnswerVariant;
 }
 
-interface AddAnswerProps {
+interface EditAnswersProps {
   className?: string;
   answers: AnswerBody;
 }
 
-export const AddAnswer = observer((props: AddAnswerProps) => {
+export const EditAnswers = observer((props: EditAnswersProps) => {
   const { className, answers } = props;
   const isLabel = answers.type === "radio" || answers.type === "checkbox";
   const mods = {[cls.hid]: !isLabel}
