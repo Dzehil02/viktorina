@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 export interface UserTypes {
     setIsAuth: (isAuth: boolean) => void;
@@ -6,7 +6,6 @@ export interface UserTypes {
     get isAuth(): boolean;
     get user(): any;
 }
-
 
 export default class User implements UserTypes {
     constructor() {

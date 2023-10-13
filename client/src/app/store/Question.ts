@@ -1,7 +1,7 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 // export interface QuestionTypes {
-    
+
 // }
 
 export type QuestionVariant = 'radio' | 'box' | 'input';
@@ -15,16 +15,17 @@ interface QuestionDescription {
 const question1: QuestionDescription = {
     description: 'Вопрос о жабесрип',
     type: 'radio',
-    order: 1
-}
+    order: 1,
+};
 
 const question2: QuestionDescription = {
-    description: 'Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне',
+    description:
+        'Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне Вопрос о путхоне',
     type: 'box',
-    order: 2
-}
+    order: 2,
+};
 
-const questions = [question1, question2]
+const questions = [question1, question2];
 
 export default class Question {
     constructor() {
@@ -48,6 +49,4 @@ export default class Question {
     get question() {
         return this._question;
     }
-
-
 }

@@ -1,1 +1,1 @@
-export {EditQuestion} from './ui/EditQuestion';
+export { EditQuestion } from './ui/EditQuestion';

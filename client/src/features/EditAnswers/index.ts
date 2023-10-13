@@ -1,1 +1,1 @@
-export {EditAnswers} from './ui/EditAnswers';
+export { EditAnswers } from './ui/EditAnswers';

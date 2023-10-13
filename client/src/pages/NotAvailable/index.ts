@@ -1,1 +1,1 @@
-export {NotAvailable} from './ui/NotAvailable';
+export { NotAvailable } from './ui/NotAvailable';

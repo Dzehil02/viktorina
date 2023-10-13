@@ -15,17 +15,19 @@ interface TitleProps {
 }
 
 export const Title = memo((props: TitleProps) => {
-    const {className, title, subTitle, align = 'left', color = 'black'} = props;
-    const additionalClasses = [className, cls[align], cls[color]]
+    const {
+        className,
+        title,
+        subTitle,
+        align = 'left',
+        color = 'black',
+    } = props;
+    const additionalClasses = [className, cls[align], cls[color]];
 
     return (
         <div className={classNames(cls.Title, {}, additionalClasses)}>
-            {title && (
-                <h1>{title}</h1>
-            )}
-            {subTitle && (
-                <h2>{subTitle}</h2>
-            )}
+            {title && <h1>{title}</h1>}
+            {subTitle && <h2>{subTitle}</h2>}
         </div>
-    )
-})
+    );
+});

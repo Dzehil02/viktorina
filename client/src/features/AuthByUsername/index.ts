@@ -1,1 +1,1 @@
-export {AuthByUsername} from './ui/AuthByUsername';
+export { AuthByUsername } from './ui/AuthByUsername';

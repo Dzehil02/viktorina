@@ -6,13 +6,13 @@ interface AuthProps {
 }
 
 const Auth = (props: AuthProps) => {
+    const { className } = props;
 
-    const {className} = props;
-    
     return (
         <Suspense fallback={<div>Loading ...</div>}>
-            <AuthByUsername className={className}/>
-        </Suspense>)
-}
+            <AuthByUsername className={className} />
+        </Suspense>
+    );
+};
 
 export default Auth;

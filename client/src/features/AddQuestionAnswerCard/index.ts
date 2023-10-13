@@ -1,1 +1,1 @@
-export {AddQuestionAnswerCard} from './ui/AddQuestionAnswerCard';
+export { AddQuestionAnswerCard } from './ui/AddQuestionAnswerCard';

@@ -1,1 +1,1 @@
-export {AddQuestion} from './ui/AddQuestion';
+export { AddQuestion } from './ui/AddQuestion';

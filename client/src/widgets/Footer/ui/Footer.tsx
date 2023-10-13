@@ -6,12 +6,11 @@ interface FooterProps {
 }
 
 export const Footer = ({ className }: FooterProps) => {
-
-  return (
-    <footer className={classNames(cls.footer, {}, [className])}>
-        <p>ссылка на гитхаб проекта</p>
-        <p>2023</p>
-        <p>изменить тему или язык</p>
-    </footer>
-  );
+    return (
+        <footer className={classNames(cls.footer, {}, [className])}>
+            <p>ссылка на гитхаб проекта</p>
+            <p>2023</p>
+            <p>изменить тему или язык</p>
+        </footer>
+    );
 };

@@ -1,1 +1,1 @@
-export {AddAnswer} from './ui/AddAnswer';
+export { AddAnswer } from './ui/AddAnswer';

@@ -1,85 +1,97 @@
-import { useContext, useCallback } from "react";
-import { observer } from "mobx-react-lite";
-import { Context } from "../../../main";
-import cls from "./EditAnswers.module.scss";
-import { classNames } from "../../../shared/lib/classNames/classNames";
-import { Button } from "../../../shared/ui/Button";
-import { QuestionVariant } from "../../../app/store/Question";
+import { useContext, useCallback } from 'react';
+import { observer } from 'mobx-react-lite';
+import { Context } from '../../../main';
+import cls from './EditAnswers.module.scss';
+import { classNames } from '../../../shared/lib/classNames/classNames';
+import { Button } from '../../../shared/ui/Button';
+import { QuestionVariant } from '../../../app/store/Question';
 
-export type AnswerVariant = "radio" | "checkbox" | "text";
+export type AnswerVariant = 'radio' | 'checkbox' | 'text';
 
 export interface Answer {
-  value: string;
-  correct: boolean | string;
+    value: string;
+    correct: boolean | string;
 }
 
 export interface AnswerBody {
-  answers: Answer[];
-  type: AnswerVariant;
+    answers: Answer[];
+    type: AnswerVariant;
 }
 
 interface EditAnswersProps {
-  className?: string;
-  answers: AnswerBody;
+    className?: string;
+    answers: AnswerBody;
 }
 
 export const EditAnswers = observer((props: EditAnswersProps) => {
-  const { className, answers } = props;
-  const isLabel = answers.type === "radio" || answers.type === "checkbox";
-  const mods = {[cls.hid]: !isLabel}
+    const { className, answers } = props;
+    const isLabel = answers.type === 'radio' || answers.type === 'checkbox';
+    const mods = { [cls.hid]: !isLabel };
 
-  const content = (answers: AnswerBody) => {
-    if (isLabel) {
-      return (
-        <div className={classNames(cls.answers, {}, [])}>
-        {answers.answers.map((answer) => (
-          <div>
-            <input type={answers.type} id={answer.value} value={answer.value} />
-            {/* Эти лейблы пригодятся на странице прохождения теста и на странице завершенных тестов */}
-              {/* <label
+    const content = (answers: AnswerBody) => {
+        if (isLabel) {
+            return (
+                <div className={classNames(cls.answers, {}, [])}>
+                    {answers.answers.map((answer) => (
+                        <div>
+                            <input
+                                type={answers.type}
+                                id={answer.value}
+                                value={answer.value}
+                            />
+                            {/* Эти лейблы пригодятся на странице прохождения теста и на странице завершенных тестов */}
+                            {/* <label
                 className={classNames(cls.label, {}, [])}
                 for={answer.value}
               >
                 {answer.value}
               </label> */}
-            <input className={classNames(cls.enterAnswer, {}, [])} id={answer.value} value={answer.value} />
-          </div>
-        ))}
-      </div>
-        )
-    }
+                            <input
+                                className={classNames(cls.enterAnswer, {}, [])}
+                                id={answer.value}
+                                value={answer.value}
+                            />
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        return (
+            <div className={classNames(cls.answers, {}, [])}>
+                {answers.answers.map((answer) => (
+                    <div>
+                        <label className={classNames(cls.labelForText, {}, [])}>
+                            {'Введите ответ'}
+                        </label>
+                        <input
+                            type={answers.type}
+                            id={answer.correct + ''}
+                            value={''}
+                        />
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    const addVariant = (type: string) => {
+        return () => console.log(type);
+    };
 
     return (
-      <div className={classNames(cls.answers, {}, [])}>
-      {answers.answers.map((answer) => (
-        <div>
-            <label
-              className={classNames(cls.labelForText, {}, [])}
-            >
-              {"Введите ответ"}
-            </label>
-          <input type={answers.type} id={answer.correct+''} value={''} />
+        <div className={classNames(cls.answerBody, {}, [])}>
+            {content(answers)}
+            <div className={classNames(cls.btnWrap, mods, [])}>
+                <Button onClick={addVariant(answers.type)}>
+                    + добавить ответ
+                </Button>
+                {answers.answers.length > 1 && (
+                    <Button className={classNames(cls.btnDelete, {}, [])}>
+                        - удалить ответ
+                    </Button>
+                )}
+            </div>
         </div>
-      ))}
-    </div>
-    )
-  }
-
-  const addVariant = (type: string) => {
-    return () => console.log(type)
-  }
-
-  return (
-    <div className={classNames(cls.answerBody, {}, [])}>
-      {content(answers)}
-      <div className={classNames(cls.btnWrap, mods, [])}>
-        <Button onClick={addVariant(answers.type)}>+ добавить ответ</Button>
-        {answers.answers.length > 1 && (
-          <Button className={classNames(cls.btnDelete, {}, [])}>
-            - удалить ответ
-          </Button>
-        )}
-      </div>
-    </div>
-  );
+    );
 });

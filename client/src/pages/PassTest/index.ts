@@ -1,1 +1,1 @@
-export {PassTest} from './ui/PassTest';
+export { PassTest } from './ui/PassTest';

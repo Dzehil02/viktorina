@@ -25,7 +25,6 @@ export const Input = memo((props: InputProps) => {
         ...otherProps
     } = props;
 
-
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
     };
