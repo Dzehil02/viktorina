@@ -1,15 +1,12 @@
-import './NotAvailable.module.scss';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
 
-interface NotAvailableProps {
-    className?: string;
-}
-
-export const NotAvailable = (props: NotAvailableProps) => {
-    const { className } = props;
-
+const NotAvailable = () => {
     return (
-        <div className={'NotAvailable'}>
-            <h1>Нет доступа к странице, пожалуйста авторизуйтесь</h1>
-        </div>
+        <Card>
+            <Title align='center' title='Нет доступа к странице, пожалуйста авторизуйтесь'/>
+        </Card>
     );
 };
+
+export default NotAvailable;

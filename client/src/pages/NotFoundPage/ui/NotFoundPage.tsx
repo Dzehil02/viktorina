@@ -1,15 +1,12 @@
-import './NotFoundPage.module.scss';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
 
-interface NotFoundPageProps {
-    className?: string;
-}
-
-export const NotFoundPage = (props: NotFoundPageProps) => {
-    const { className } = props;
-
+const NotFoundPage = () => {
     return (
-        <div className={'NotFoundPage'}>
-            <h1>Страница не найдена</h1>
-        </div>
+        <Card>
+            <Title align='center' title='Страница не найдена'/>
+        </Card>
     );
 };
+
+export default NotFoundPage;

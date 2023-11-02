@@ -1,1 +1,1 @@
-export { NotAvailable } from './ui/NotAvailable';
+export {NotAvailableAsync as NotAvailable } from './ui/NotAvailableAsync';

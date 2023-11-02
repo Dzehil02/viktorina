@@ -2,13 +2,13 @@ import { RouteObject } from 'react-router-dom';
 import { MyTestList } from '../../../pages/TestList/MyTestList/ui/MyTestList';
 import { AppRoutes } from '../consts/consts';
 import { PassedTestList } from '../../../pages/TestList/PassedTestList/ui/PassedTestList';
-import { NotFoundPage } from '../../../pages/NotFoundPage';
 import { UserRole } from '../../../entities/User/model/consts/consts';
 import { Main } from '../../../pages/Main';
 import { NewTest } from '../../../pages/NewTest';
 import { EditTest } from '../../../pages/EditTest';
 import { PassTest } from '../../../pages/PassTest';
 import { Auth } from '@/pages/Auth';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export interface RouteObj extends RouteObject {
     authOnly?: boolean;
